@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Code:wght@300..700&display=swap');
+
+:root {
+    --primary-color: rgb(0, 110, 255);
+}
+
+.Main {
+    height: calc(100vh - 100px);
+    background-color: gray;
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Main h1, .Main h3 {
+    font-weight: normal;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    width: 70%;
+    margin-bottom: 50px;
+    border-left: 3px solid white;
+    padding: 10px;
+}
+
+.main-content h1 {
+    font-size: 5rem;
+    font-family: 'Bebas Neue';
+}
+
+.main-content h3 {
+    font-size: 1.3rem;
+    line-height: 1.6rem;
+    width: 80%;
+    font-family: Roboto;
+}
+
+.main-buttons {
+    display: flex;
+    gap: 10px;
+
+}
+
+.main-buttons button {
+    position: relative;
+    padding: 10px 40px;
+    border-radius: 20px;
+    background-color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    z-index: 0;
+}
+
+.main-buttons button.shallow-button {
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+.main-buttons button span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-radius: 0px 20px 20px 0px;
+    transition: all 0.5s ease;
+    background-color: white;
+    z-index: -1;
+}
+
+.main-buttons button:hover {
+    color: black;
+}
+
+.main-buttons button:hover span {
+    width: 100%;
+}
+
+@keyframes visible {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.visible {
+    animation: visible 1.5s linear;
+}
+
+@media screen and (max-width: 1350px) {
+    .main-content {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .main-content {
+        max-width: 90%;
+    }
+}
+@media screen and (max-width: 1050px) {
+    /* .main-content {
+        width: 90%;
+    } */
+
+    .main-content h1 {
+        font-size: 6.5vw;
+    }
+
+    .main-content h3 {
+        font-size: 1.5vw;
+        line-height: 1rem;
+    }
+
+    .main-content {
+        margin-bottom: 0;
+    }
+
+    .Main {
+        height: auto;
+        min-height: 60vh;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .Main {
+        min-height: 45vh;
+    }
+}

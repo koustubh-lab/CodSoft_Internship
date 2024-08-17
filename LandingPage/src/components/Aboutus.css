@@ -1,0 +1,83 @@
+.Aboutus {
+    padding: 20px 0px;
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+}
+
+.Aboutus * {
+    color: black;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+
+    width: 80%;
+    padding: 10px;
+}
+
+.about-left {
+    height: 100%;
+    line-height: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.about-left div:first-of-type {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about-left h1 {
+    font-size: 3rem;
+    font-weight: 500;
+    font-family: Bebas neue;
+    line-height: unset;
+}
+
+.about-left p {
+    word-break: break-all;
+}
+
+.about-left button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    color: white;
+
+    background-color: var(--nav-primary-color);
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.about-left button:hover {
+    background-color: var(--hover-button-color);
+    transform: translateY(-2px);
+}
+
+.title-line {
+    height: 3px;
+    width: 50px;
+    background-color: var(--primary-color);
+}
+
+@media screen and (max-width: 900px) {
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .about-left {
+        gap: 20px;
+    }
+
+    .Aboutus {
+        padding-top: 50px;
+    }
+}
